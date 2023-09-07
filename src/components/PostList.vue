@@ -1,29 +1,22 @@
 <template>
-   <div>
+  <div>
     <h3>Cписок</h3>
-    <post-item
-      v-for="post in posts" 
-      :post="post"
-      :key="post"
-      @remove="$emit('remove', post)"
-      />
+    <post-item v-for="post in posts" :post="post" :key="post.id" @remove="$emit('remove', post)" />
   </div>
 </template>
 
 <script>
-import PostItem from "@/components/PostItem";
+import PostItem from '@/components/PostItem'
 export default {
-  components: {PostItem},
+  name: 'PostList',
+  components: { PostItem },
   props: {
     posts: {
-        type:Array,
-        required: true 
-    }
-  }
+      type: Array,
+      required: true,
+    },
+  },
 }
-
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
